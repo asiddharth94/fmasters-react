@@ -1,11 +1,6 @@
-const Pet = ({ name, animal, breed }) => {
-  //using destructuring
-  return React.createElement("div", {}, [
-    React.createElement("h1", {}, name),
-    React.createElement("h2", {}, animal),
-    React.createElement("h2", {}, breed),
-  ]);
-};
+import React from "react";
+import { render } from "react-dom";
+import Pet from "./Pet";
 
 // Our App Component; components are basically functions which return some markup
 // Also called as Composite Component - a fancy word for the components that we create
@@ -35,4 +30,4 @@ const App = () => {
   );
 };
 
-ReactDOM.render(React.createElement(App), document.getElementById("root"));
+render(React.createElement(App), document.getElementById("root"));
