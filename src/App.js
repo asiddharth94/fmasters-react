@@ -1,6 +1,10 @@
 import React from "react";
 import { render } from "react-dom";
-import Pet from "./Pet";
+import { Link, Router } from "@reach/router";
+
+// import Pet from "./Pet";
+import SearchParams from "./SearchParams";
+import Details from "./Details";
 
 // Our App Component; components are basically functions which return some markup
 // Also called as Composite Component - a fancy word for the components that we create
@@ -29,12 +33,20 @@ const App = () => {
   //     ]
   //   );
   return (
-    <div>
-      <h1>Adopt Me!</h1>
-      <Pet name="Sniper" animal="Dog" breed="Retriever" />
+    <React.StrictMode>
+      <div>
+        <header>
+          <Link to="/">Adopt Me!</Link>
+        </header>
+        {/* <Pet name="Sniper" animal="Dog" breed="Retriever" />
       <Pet name="Pepper" animal="Bird" breed="Cockatiel" />
-      <Pet name="Billa" animal="Cat" breed="Mixed" />
-    </div>
+      <Pet name="Billa" animal="Cat" breed="Mixed" /> */}
+        <Router>
+          <SearchParams path="/" />
+          <Details path="/details/:id" />
+        </Router>
+      </div>
+    </React.StrictMode>
   );
 };
 
